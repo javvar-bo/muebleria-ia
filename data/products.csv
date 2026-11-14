@@ -7,3 +7,35 @@ M05,Escritorio Ejecutivo,Escritorios,Melamina,Escritorio grande,140,70,75,1400.0
 M06,Cómoda Seis Cajones,Dormitorio,Madera,Cómoda para dormitorio,110,45,85,1310.00,900.00,TRUE
 M07,Sofá dos plazas,Sala,Tela/madera,Sofá de dos plazas,160,85,85,1950.00,1630.00,TRUE
 M08,Estante Modular,Almacenaje,Melamina,Estante modular,90,35,180,1250.00,890.00,TRUE
+M09,Mesa de centro Nórdica,Sala,MDF/madera,Artículo sintético de demostración; imagen no disponible,90,50,45,750.00,485.00,TRUE
+M10,Sofá tres plazas Confort,Sala,Tela/madera,Artículo sintético de demostración; imagen no disponible,210,90,87,3450.00,2370.00,TRUE
+M11,Sillón individual Relax,Sala,Tela/madera,Artículo sintético de demostración; imagen no disponible,90,88,95,1680.00,1120.00,TRUE
+M12,Rack TV 55 pulgadas,Sala,Melamina,Artículo sintético de demostración; imagen no disponible,145,40,55,1150.00,750.00,TRUE
+M13,Mesa lateral Oslo,Sala,Madera,Artículo sintético de demostración; imagen no disponible,48,48,55,490.00,320.00,TRUE
+M14,Sofá cama Compacto,Sala,Tela/metal,Artículo sintético de demostración; imagen no disponible,185,90,85,2980.00,2030.00,TRUE
+M15,Mesa comedor seis personas,Comedor,Madera,Artículo sintético de demostración; imagen no disponible,160,90,75,2250.00,1490.00,TRUE
+M16,Silla tapizada Toscana,Comedor,Tela/madera,Artículo sintético de demostración; imagen no disponible,48,52,90,520.00,330.00,TRUE
+M17,Aparador comedor Milano,Comedor,Melamina,Artículo sintético de demostración; imagen no disponible,150,45,85,1750.00,1150.00,TRUE
+M18,Vitrina Cristal,Comedor,Madera/vidrio,Artículo sintético de demostración; imagen no disponible,85,42,180,2100.00,1450.00,TRUE
+M19,Cama dos plazas Roble,Dormitorio,Madera,Artículo sintético de demostración; imagen no disponible,150,200,95,2850.00,1960.00,TRUE
+M20,Cama una plaza Juvenil,Dormitorio,MDF,Artículo sintético de demostración; imagen no disponible,105,195,90,1650.00,1100.00,TRUE
+M21,Velador dos cajones,Dormitorio,Melamina,Artículo sintético de demostración; imagen no disponible,45,40,55,450.00,275.00,TRUE
+M22,Ropero cuatro puertas,Dormitorio,Melamina,Artículo sintético de demostración; imagen no disponible,180,55,200,3850.00,2600.00,TRUE
+M23,Cabecera tapizada Queen,Dormitorio,Tela/madera,Artículo sintético de demostración; imagen no disponible,160,12,120,1250.00,850.00,TRUE
+M24,Zapatero abatible,Dormitorio,Melamina,Artículo sintético de demostración; imagen no disponible,80,28,115,890.00,590.00,TRUE
+M25,Escritorio angular Ejecutivo,Oficina,Melamina,Artículo sintético de demostración; imagen no disponible,160,140,75,1950.00,1300.00,TRUE
+M26,Silla operativa Malla,Oficina,Malla/metal,Artículo sintético de demostración; imagen no disponible,60,60,105,950.00,630.00,TRUE
+M27,Mesa de reuniones seis,Oficina,Melamina/metal,Artículo sintético de demostración; imagen no disponible,200,100,75,2650.00,1830.00,TRUE
+M28,Archivador tres gavetas,Oficina,Metal,Artículo sintético de demostración; imagen no disponible,45,60,100,1250.00,820.00,TRUE
+M29,Biblioteca cinco niveles,Oficina,Melamina,Artículo sintético de demostración; imagen no disponible,80,35,190,1120.00,740.00,TRUE
+M30,Escritorio juvenil,Escritorios,Melamina,Artículo sintético de demostración; imagen no disponible,110,50,75,790.00,510.00,TRUE
+M31,Repisa flotante triple,Almacenaje,Melamina,Artículo sintético de demostración; imagen no disponible,90,22,18,320.00,195.00,TRUE
+M32,Organizador ocho cubos,Almacenaje,Melamina,Artículo sintético de demostración; imagen no disponible,120,30,120,1050.00,680.00,TRUE
+M33,Perchero vertical,Almacenaje,Madera,Artículo sintético de demostración; imagen no disponible,45,45,175,380.00,220.00,TRUE
+M34,Baúl organizador,Almacenaje,Madera,Artículo sintético de demostración; imagen no disponible,100,45,50,870.00,570.00,TRUE
+M35,Mesa plegable multiuso,Multiuso,Metal/MDF,Artículo sintético de demostración; imagen no disponible,120,60,74,690.00,440.00,TRUE
+M36,Banco zapatero recibidor,Multiuso,Madera/tela,Artículo sintético de demostración; imagen no disponible,90,35,48,760.00,490.00,TRUE
+M37,Mueble baño auxiliar,Baño,PVC/MDF,Artículo sintético de demostración; imagen no disponible,65,30,85,670.00,410.00,TRUE
+M38,Alacena compacta,Cocina,Melamina,Artículo sintético de demostración; imagen no disponible,100,40,175,1850.00,1230.00,TRUE
+M39,Isla de cocina móvil,Cocina,Madera/metal,Artículo sintético de demostración; imagen no disponible,110,55,90,2150.00,1440.00,TRUE
+M40,Set mesas nido,Sala,Madera/metal,Artículo sintético de demostración; imagen no disponible,65,45,50,840.00,530.00,TRUE
