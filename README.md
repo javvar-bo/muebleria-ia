@@ -28,10 +28,11 @@ Repositorio de colaboración para el caso académico **Mueblería Cochabamba 202
 
 | Archivo | Contenido |
 | --- | --- |
-| `data/products.csv` | 8 muebles M01–M08; dimensiones, categorías, precios de venta y costos internos |
-| `data/inventory.csv` | 8 existencias de referencia, reservas, mínimos, objetivos y pendientes válidos |
+| `data/products.csv` | 40 muebles M01–M40; dimensiones, categorías, precios de venta y costos internos |
+| `data/inventory.csv` | 40 existencias consolidadas de referencia, reservas, mínimos, objetivos y pendientes válidos |
+| `data/warehouses.csv` y `data/warehouse_stock.csv` | 2 ubicaciones y 72 registros de stock físico con mínimo y objetivo por ubicación |
 | `data/suppliers.csv` | 3 proveedores ficticios P01–P03 |
-| `data/supplier_offers.csv` | 8 ofertas para selección y filtros de elegibilidad |
+| `data/supplier_offers.csv` | 72 ofertas para selección y filtros de elegibilidad |
 | `data/customers.csv` | 6 clientes ficticios con correos `example.com` |
 | `data/staff.csv` | 4 usuarios ficticios para filtros y perfiles |
 | `data/sales_lines.csv` | 11 líneas de venta ficticias (septiembre y octubre de 2026), con costo de mercadería vendida |
@@ -91,7 +92,7 @@ El responsable de base de datos puede crear su propio esquema y migraciones SQL 
 1. Leer el [diccionario de datos](docs/data-dictionary.md) y crear tablas, claves foráneas, `UNIQUE`, `CHECK` y políticas de acceso.
 2. Importar primero productos, proveedores, clientes y personal; después existencias, ofertas, ventas, compras, solicitudes y proformas.
 3. Exponer los endpoints documentados en [contratos de integración](docs/integration-contract.md), o acordar versiones equivalentes con el equipo.
-4. Tratar `inventory.csv` como un **snapshot**: no volver a descontar ventas históricas sobre ese stock.
+4. Tratar `inventory.csv` como una **vista/snapshot consolidado**: importar `warehouse_stock.csv` como origen físico, sin duplicar cantidades; no volver a descontar ventas históricas sobre ese stock.
 5. Mantener separados: disponibilidad física, reservas, compras confirmadas pendientes y recepciones. No contar un pedido emitido como stock recibido.
 6. Conservar costos internos y ofertas de proveedores en servicios restringidos. Nunca entregarlos al agente público.
 7. Probar todos los resultados de [aceptación](fixtures/acceptance.json) antes de integrar los agentes.
@@ -115,3 +116,11 @@ El responsable de base de datos puede crear su propio esquema y migraciones SQL 
 5. Automatización de reposición, integración y pruebas end-to-end.
 
 **Proyecto académico con datos ficticios.** Las fotografías de productos deben presentarse como marcadores ilustrativos hasta contar con imágenes autorizadas.
+
+## 9. Ampliación del catálogo e inventario
+- **40 muebles**, agrupados en sala, comedor, dormitorio, oficina, almacenaje, escritorios, cocina, baño y multiuso.
+- **2 ubicaciones:** almacén central (ALM01) y sala de exhibición (SALA01).
+- Stock físico y reservado, **stock mínimo y objetivo por ubicación**, con 72 registros de existencias.
+- **72 ofertas** de los tres proveedores ficticios existentes para probar comparación y compras.
+- Los productos M01–M08 conservan los controles del enunciado. Los nuevos 32 son sintéticos, con inventario suficiente para no añadir reposiciones al fixture docente.
+- `data/inventory.csv` es vista consolidada; no crear una segunda fuente de verdad al migrar a PostgreSQL.
