@@ -1,0 +1,2 @@
+purchase_id,supplier_id,product_id,quantity,status,expected_arrival,count_as_inbound
+OC-001,P01,M06,6,CONFIRMED,2026-11-16,TRUE
