@@ -1,0 +1,2 @@
+event_id,quote_id,version,event_type,occurred_at,recipient,outcome
+QE001,PRO-S01,1,CREATED,2026-11-13T09:00:00-04:00,cotizacion.s01@example.com,DRAFT
