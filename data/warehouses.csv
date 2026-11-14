@@ -1,0 +1,3 @@
+warehouse_id,name,warehouse_type,city,active
+ALM01,Almacén Central (ficticio),WAREHOUSE,Cochabamba,TRUE
+SALA01,Sala de Exhibición (ficticia),SHOWROOM,Cochabamba,TRUE
