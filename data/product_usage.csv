@@ -1,0 +1,5 @@
+product_id,intended_use,room_type,audience,notes,data_origin
+M04,home_office,home_office,adult,Escritorio compacto para computadora y trabajo,synthetic
+M05,executive_office,office,adult,Escritorio amplio para despacho,synthetic
+M25,executive_office,office,adult,Escritorio angular para espacios amplios,synthetic
+M30,study_youth,bedroom,youth,Escritorio para estudio juvenil,synthetic
