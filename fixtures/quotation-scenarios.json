@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "synthetic": true,
+    "all_emails_simulated": true,
+    "no_live_documents": true
+  },
+  "cases": [
+    {
+      "id": "QT01",
+      "request_id": "S01",
+      "items": [
+        {
+          "sku": "M01",
+          "quantity": 4
+        },
+        {
+          "sku": "M02",
+          "quantity": 1
+        }
+      ],
+      "email": "cotizacion.s01@example.com",
+      "email_confirmed": true,
+      "transport_bob": 100,
+      "expected": {
+        "subtotal_bob": 2480,
+        "total_bob": 2580,
+        "shortage_M01": 2,
+        "delivery": "TO_CONFIRM",
+        "is_sale": false
+      }
+    },
+    {
+      "id": "QT02",
+      "request_id": "STEST02",
+      "items": [
+        {
+          "sku": "M04",
+          "quantity": 1
+        }
+      ],
+      "email": "cliente1@example.com",
+      "email_confirmed": true,
+      "transport_bob": 0,
+      "transport_policy": "PICKUP_ASSUMPTION_TEST_ONLY",
+      "expected": {
+        "subtotal_bob": 850,
+        "total_bob": 850
+      }
+    },
+    {
+      "id": "QT03",
+      "request_id": "STEST03",
+      "items": [
+        {
+          "sku": "M09",
+          "quantity": 1
+        }
+      ],
+      "email": "cliente2@example.com",
+      "email_confirmed": false,
+      "expected": {
+        "status": "PENDING_CLARIFICATION",
+        "no_pdf": true
+      }
+    },
+    {
+      "id": "QT04",
+      "request_id": "STEST04",
+      "items": [
+        {
+          "sku": "M02",
+          "quantity": 0
+        }
+      ],
+      "email": "cliente2@example.com",
+      "email_confirmed": true,
+      "expected": {
+        "error": "INVALID_QUANTITY"
+      }
+    },
+    {
+      "id": "QT05",
+      "request_id": "STEST05",
+      "items": [
+        {
+          "sku": "M999",
+          "quantity": 1
+        }
+      ],
+      "email": "cliente2@example.com",
+      "email_confirmed": true,
+      "expected": {
+        "error": "UNKNOWN_PRODUCT"
+      }
+    },
+    {
+      "id": "QT06",
+      "request_id": "STEST06",
+      "items": [
+        {
+          "sku": "M10",
+          "quantity": 1
+        }
+      ],
+      "email": "empresa3@example.com",
+      "email_confirmed": true,
+      "special_discount_requested": true,
+      "expected": {
+        "human_review": true
+      }
+    },
+    {
+      "id": "QT07",
+      "request_id": "S01",
+      "idempotency_key": "S01-v1",
+      "retry_count": 2,
+      "expected": {
+        "unique_pdf": 1,
+        "unique_simulated_send": 1
+      }
+    },
+    {
+      "id": "QT08",
+      "request_id": "S01",
+      "event": "CHANGE_QUANTITY",
+      "expected": {
+        "new_version": true,
+        "keep_prior_version": true
+      }
+    },
+    {
+      "id": "QT09",
+      "request_id": "S01",
+      "event": "SIMULATED_EMAIL_FAILURE",
+      "expected": {
+        "state": "SEND_FAILED",
+        "retry_same_version": true
+      }
+    },
+    {
+      "id": "QT10",
+      "request_id": "S01",
+      "event": "ACCEPTED",
+      "expected": {
+        "automatic_sale": false,
+        "automatic_stock_change": false
+      }
+    },
+    {
+      "id": "QT11",
+      "request_id": "STEST11",
+      "items": [
+        {
+          "sku": "M14",
+          "quantity": 40
+        }
+      ],
+      "email": "cliente3@example.com",
+      "email_confirmed": true,
+      "expected": {
+        "shortage": true,
+        "do_not_promise_delivery": true
+      }
+    },
+    {
+      "id": "QT12",
+      "request_id": "STEST12",
+      "items": [
+        {
+          "sku": "M12",
+          "quantity": 1
+        }
+      ],
+      "email": "cliente4@example.com",
+      "email_confirmed": true,
+      "outside_delivery_coverage": true,
+      "expected": {
+        "human_review": true
+      }
+    }
+  ]
+}
