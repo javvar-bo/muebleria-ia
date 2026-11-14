@@ -1,4 +1,4 @@
-import {rows} from '../src/db.js';
+import {rows,publicProduct} from '../src/db.js';
 import {quote,stats,reorder} from '../src/core.js';
 type Test={case:string;passed:boolean};
 export default async function handler(req:any,res:any){
@@ -15,7 +15,7 @@ export default async function handler(req:any,res:any){
  const matches=products.filter((p:any)=>p.active&&p.category==='Escritorios'&&Number(p.width_cm)<=110&&Number(p.sale_price_bob)<=900).map((p:any)=>p.product_id);
  check('commercial.width_budget',matches.includes('M04')&&!matches.includes('M05')&&matches.includes('M30')&&lookup('M04')?.width_cm===100&&Number(lookup('M04')?.sale_price_bob)===850);
  check('commercial.stock',Number(inv('M04')?.available_stock)===4);
- check('commercial.public_projection',true);
+ check('commercial.public_projection',!Object.prototype.hasOwnProperty.call(publicProduct(lookup('M04')),'unit_cogs_bob')&&Object.prototype.hasOwnProperty.call(publicProduct(lookup('M04')),'sale_price_bob'));
  const lines=requestLines.filter((l:any)=>l.request_id==='S01').map((l:any)=>({product_id:l.product_id,quantity:Number(l.quantity),price:Number(lookup(l.product_id)?.sale_price_bob),stock:Number(inv(l.product_id)?.available_stock)}));
  const q=quote(lines,100);
  check('quotation.S01',requests.some((r:any)=>r.request_id==='S01')&&q.subtotal_bob===2480&&q.transport_bob===100&&q.total_bob===2580&&q.lines.find(x=>x.product_id==='M01')?.shortage===2&&q.delivery_status==='TO_CONFIRM'&&!q.is_sale);
