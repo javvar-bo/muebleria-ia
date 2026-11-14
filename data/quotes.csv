@@ -1,0 +1,2 @@
+quote_id,request_id,version,status,subtotal_bob,discount_bob,transport_bob,total_bob,delivery_status,email_status,is_sale
+PRO-S01,S01,1,DRAFT,2480,0,100,2580,TO_CONFIRM,NOT_SENT,FALSE
