@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "note": "Contratos propuestos para herramientas tipadas; persistencia real pendiente",
+  "common": {
+    "inputs": [
+      "session_id",
+      "request_id",
+      "user_role"
+    ],
+    "outputs": [
+      "message",
+      "data",
+      "follow_up_questions",
+      "needs_handoff",
+      "sources",
+      "error"
+    ]
+  },
+  "agents": {
+    "commercial": {
+      "tools": [
+        "search_catalog",
+        "get_product",
+        "get_inventory_snapshot",
+        "register_quote_request_mock",
+        "route_to_seller_mock"
+      ]
+    },
+    "quotation": {
+      "tools": [
+        "get_request",
+        "validate_customer_email",
+        "get_authorized_prices",
+        "get_inventory_snapshot",
+        "calculate_quote",
+        "render_pdf_mock",
+        "simulate_email",
+        "write_quote_event_mock"
+      ]
+    },
+    "analytics": {
+      "tools": [
+        "aggregate_sales",
+        "aggregate_purchases",
+        "calculate_gross_margin",
+        "list_low_stock",
+        "aggregate_quotes"
+      ],
+      "permission": "READ_ONLY"
+    }
+  },
+  "invariants": [
+    "no_supplier_cost_to_public",
+    "quote_is_not_sale",
+    "idempotent_quote_and_send",
+    "no_raw_sql_from_llm",
+    "no_real_email_in_demo"
+  ]
+}
