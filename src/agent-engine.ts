@@ -70,14 +70,14 @@ export async function runAgent(role:Role,message:string,history:Message[]){
  const past=history.slice(-8).filter(x=>['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role,content:x.content.slice(0,1500)}));
  const messages:any[]=[{role:'system',content:systems[role]},...past,{role:'user',content:message}];
  const used:string[]=[];
- for(let step=0;step<5;step++){
- const response=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+process.env.OPENAI_API_KEY},body:json({model,messages,tools:definitions[role],tool_choice:step===0?'required':'auto',temperature:0.2,max_tokens:650})});
+ for(let step=0;step<4;step++){
+ const response=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+process.env.OPENAI_API_KEY},body:json({model,messages,tools:definitions[role],tool_choice:step===0?'required':'auto',temperature:0.2,max_tokens:700})});
  if(!response.ok){console.error('Model API error',response.status);throw new Error('MODEL_PROVIDER_UNAVAILABLE');}
  const answer:any=await response.json();const m=answer.choices?.[0]?.message;
  if(!m)throw Error('MODEL_EMPTY_RESPONSE');
  if(m.tool_calls?.length){
  messages.push(m);
- for(const call of m.tool_calls.slice(0,4)){const name=String(call.function?.name||'');const args=safeArgs(String(call.function?.arguments||'{}'));const result=await tool(role,name,args);used.push(name);messages.push({role:'tool',tool_call_id:call.id,content:json(result)});}
+ for(const call of m.tool_calls.slice(0,8)){const name=String(call.function?.name||'');const args=safeArgs(String(call.function?.arguments||'{}'));const result=await tool(role,name,args);used.push(name);messages.push({role:'tool',tool_call_id:call.id,content:json(result)});}
  continue;
  }
  if(typeof m.content==='string'&&m.content.trim())return{agent:role,reply:m.content.trim(),tools_used:used,model,source:'supabase',mode:'read_only'};
