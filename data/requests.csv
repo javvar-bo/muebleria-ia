@@ -1,0 +1,2 @@
+request_id,customer_id,confirmed_email,status,notes
+S01,C06,cotizacion.s01@example.com,PENDING_QUOTE,Entrega pendiente de confirmar; faltan 2 sillas M01
