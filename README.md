@@ -2,15 +2,15 @@
 
 Repositorio de colaboración para el caso académico **Mueblería Cochabamba 2026**. El objetivo es construir una aplicación web con atención comercial inteligente, proformas, analítica y automatización de reposición.
 
-> **Estado actual:** datos iniciales, políticas, contratos de integración y casos de aceptación disponibles. **La aplicación, los agentes, la API y la base de datos todavía no están implementados en este repositorio.**
+> **Estado actual:** web comercial y endpoints de los tres agentes desplegados en Vercel; Supabase poblado y conectado. **La conversación con el modelo de IA requiere configurar `OPENAI_API_KEY` (aún pendiente)**. Emisión de PDF, correo simulado, autenticación de usuarios y escrituras transaccionales siguen pendientes.
 
 ## 1. Alcance funcional
 
 | Componente | Responsabilidad | Estado |
 | --- | --- | --- |
-| Agente 1 — Comercial | Identifica necesidades, consulta catálogo y existencias, recomienda muebles y registra solicitudes | Pendiente |
-| Agente 2 — Proformas | Valida solicitudes, coordina cálculos, PDF versionado y envío **simulado** | Pendiente |
-| Agente 3 — Analítica | Responde preguntas sobre ventas, compras, márgenes, inventario y cotizaciones con datos comprobables | Pendiente |
+| Agente 1 — Comercial | Asesor conversacional y herramientas de catálogo y stock; registro definitivo pendiente | Código desplegado; modelo pendiente |
+| Agente 2 — Proformas | Chat administrativo y cálculo de vista previa S01; emisión PDF y envío aún no implementados | Código desplegado; modelo pendiente |
+| Agente 3 — Analítica | Chat administrativo y herramientas de ventas, compras e inventario | Código desplegado; modelo pendiente |
 | Automatización de reposición | Evalúa mínimos y objetivos, compara proveedores y solicita aprobación | Pendiente |
 | Web app / administración | Catálogo, chat, solicitudes, inventario, dashboard, compras y autorizaciones | Pendiente |
 | Datos semilla | CSV, reglas JSON y fixtures de aceptación para desarrollo e importación | **Disponibles** |
@@ -124,3 +124,12 @@ El responsable de base de datos puede crear su propio esquema y migraciones SQL 
 - **72 ofertas** de los tres proveedores ficticios existentes para probar comparación y compras.
 - Los productos M01–M08 conservan los controles del enunciado. Los nuevos 32 son sintéticos, con inventario suficiente para no añadir reposiciones al fixture docente.
 - `data/inventory.csv` es vista consolidada; no crear una segunda fuente de verdad al migrar a PostgreSQL.
+
+## Agentes y despliegue (v0.2)
+- [Web comercial en Vercel](https://mueblegest-ai-agents.vercel.app/)
+- [Estado de agentes](https://mueblegest-ai-agents.vercel.app/api/agents): indica si el modelo está configurado sin exponer secretos
+- [Pruebas de aceptación](https://mueblegest-ai-agents.vercel.app/api/acceptance): 12 comprobaciones deterministas contra Supabase
+- [Guía para activar y probar los agentes](docs/AGENTS_MVP.md)
+- Antes de activar chat: configurar `OPENAI_API_KEY` como **Sensitive** y producción en Vercel; redeploy. No equivale a la suscripción ChatGPT, requiere acceso a API.
+- **Seguridad:** comercial público, proformas/analítica solo con `x-admin-key` en llamadas servidor-servidor. No colocar esta clave en JavaScript del navegador.
+- El sistema aún no registra solicitudes ni emite PDF/correos. No presentar esas capacidades como completadas.
