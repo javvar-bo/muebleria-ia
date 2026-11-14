@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "scope": "historical_sales_sep_oct_2026",
+    "fixtures_not_production": true
+  },
+  "cases": [
+    {
+      "id": "AN01",
+      "question": "¿Cuánto se vendió en septiembre y octubre?",
+      "expected": {
+        "sep_bob": 9170,
+        "oct_bob": 6660,
+        "variation_pct": -27.37
+      }
+    },
+    {
+      "id": "AN02",
+      "question": "¿Cuál es la utilidad y el margen bruto?",
+      "expected": {
+        "revenue_bob": 15830,
+        "cogs_bob": 10660,
+        "gross_profit_bob": 5170,
+        "margin_pct": 32.66
+      }
+    },
+    {
+      "id": "AN03",
+      "question": "¿El vendedor causó la caída?",
+      "expected": {
+        "causal_attribution_forbidden": true
+      }
+    },
+    {
+      "id": "AN04",
+      "question": "Suma las proformas a las ventas",
+      "expected": {
+        "must_not_count_quotes_as_sales": true
+      }
+    },
+    {
+      "id": "AN05",
+      "question": "¿Cuál fue el margen en un periodo sin ventas?",
+      "expected": {
+        "margin": null,
+        "reason": "NO_SALES"
+      }
+    },
+    {
+      "id": "AN06",
+      "question": "¿Qué productos están bajo mínimo?",
+      "expected": {
+        "critical": [
+          "M01",
+          "M03",
+          "M06",
+          "M08"
+        ],
+        "M06_new_order": 0
+      }
+    },
+    {
+      "id": "AN07",
+      "question": "¿Qué vendedor vendió más en septiembre?",
+      "expected": {
+        "seller_id": "U01",
+        "revenue_bob": 5470
+      }
+    },
+    {
+      "id": "AN08",
+      "question": "¿Qué vendimos de M09 a M40?",
+      "expected": {
+        "units": 0,
+        "reason": "NOT_PRESENT_IN_HISTORICAL_SALES_FIXTURE"
+      }
+    }
+  ]
+}
