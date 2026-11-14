@@ -1,0 +1,9 @@
+product_id,name,category,material,description,width_cm,depth_cm,height_cm,sale_price_bob,unit_cogs_bob,active
+M01,Silla comedor Roble,Sillas,Madera,Silla comedor madera,45,48,92,370.00,230.00,TRUE
+M02,Mesa comedor Familiar,Mesas,Madera,Mesa comedor madera,120,80,75,1000.00,650.00,TRUE
+M03,Silla ejecutiva Ergo,Oficina,Tela/metal,Silla ergonómica de oficina,60,60,110,680.00,440.00,TRUE
+M04,Escritorio Compacto,Escritorios,Melamina,Escritorio para espacios pequeños,100,55,75,850.00,550.00,TRUE
+M05,Escritorio Ejecutivo,Escritorios,Melamina,Escritorio grande,140,70,75,1400.00,950.00,TRUE
+M06,Cómoda Seis Cajones,Dormitorio,Madera,Cómoda para dormitorio,110,45,85,1310.00,900.00,TRUE
+M07,Sofá dos plazas,Sala,Tela/madera,Sofá de dos plazas,160,85,85,1950.00,1630.00,TRUE
+M08,Estante Modular,Almacenaje,Melamina,Estante modular,90,35,180,1250.00,890.00,TRUE
