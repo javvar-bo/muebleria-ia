@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "dataset": "SINTETICO_CON_REGLAS_CASO",
+    "currency": "BOB",
+    "timezone": "America/La_Paz",
+    "snapshot_date": "2026-11-13",
+    "source_pages": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "quotation": {
+    "transport_local_bob": 100,
+    "transport_scope": "ESCENARIO_S01_UNICAMENTE",
+    "special_discount_requires_review": true,
+    "outside_coverage_requires_review": true,
+    "quote_does_not_reserve_stock": true,
+    "quote_acceptance_does_not_create_sale": true,
+    "email_mode": "SIMULATED_ONLY",
+    "allowed_email_domain": "example.com",
+    "statuses": [
+      "DRAFT",
+      "PENDING_CLARIFICATION",
+      "ISSUED",
+      "SENT",
+      "SEND_FAILED",
+      "ACCEPTED",
+      "EXPIRED",
+      "CANCELED"
+    ],
+    "expiry_days": null
+  },
+  "replenishment": {
+    "schedule": "08:00",
+    "timezone": "America/La_Paz",
+    "max_delivery_days": 5,
+    "approval_required_for_all": true,
+    "elevated_approval_above_bob": 3000,
+    "selection_tiebreak": [
+      "lowest_total_cost",
+      "shortest_lead_time",
+      "lowest_supplier_id"
+    ],
+    "tax_included": true,
+    "consolidate_freight": false,
+    "idempotency_required": true
+  },
+  "reporting": {
+    "gross_profit_formula": "revenue - cost_of_goods_sold",
+    "margin_formula": "gross_profit / revenue; null when revenue = 0",
+    "quotes_are_not_sales": true,
+    "no_returns_or_sales_discounts_in_demo": true
+  }
+}
