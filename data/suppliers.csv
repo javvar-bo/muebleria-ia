@@ -1,0 +1,4 @@
+supplier_id,name,email,active
+P01,Proveedor Andino Ficticio,p01@example.com,TRUE
+P02,Muebles del Valle Ficticio,p02@example.com,TRUE
+P03,Proveedor Alternativo Ficticio,p03@example.com,TRUE
