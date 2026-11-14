@@ -1,0 +1,54 @@
+{
+  "data_kind": "CONTROL_CASE_PLUS_SYNTHETIC",
+  "source": "CASO MUEBLERIA COCHABAMBA 2026.pdf, pp. 5-8",
+  "case_commercial": {
+    "width_limit_cm": 110,
+    "budget_bob": 900,
+    "recommend": "M04",
+    "reject": "M05",
+    "ask_for_missing": [
+      "depth_cm",
+      "use"
+    ]
+  },
+  "case_quote": {
+    "request_id": "S01",
+    "subtotal_bob": 2480,
+    "transport_bob": 100,
+    "total_bob": 2580,
+    "m01_requested": 4,
+    "m01_available": 2,
+    "m01_replenishment_needed": 2,
+    "delivery": "TO_CONFIRM",
+    "duplicate_same_request_forbidden": true
+  },
+  "case_analytics": {
+    "september_sales_bob": 9170,
+    "october_sales_bob": 6660,
+    "percent_change": -27.37,
+    "total_sales_bob": 15830,
+    "gross_profit_bob": 5170,
+    "gross_margin_percent": 32.66
+  },
+  "case_replenishment": {
+    "M01": {
+      "quantity": 8,
+      "supplier": "P02",
+      "total_bob": 1780
+    },
+    "M03": {
+      "quantity": 6,
+      "supplier": "P01",
+      "total_bob": 2640
+    },
+    "M06": {
+      "quantity": 0
+    },
+    "M08": {
+      "quantity": 3,
+      "supplier": "P02",
+      "total_bob": 2670
+    },
+    "new_requests_total_bob": 7090
+  }
+}
