@@ -1,3 +1,4 @@
+export const config={maxDuration:30};
 import {readiness,runAgent} from '../src/agent-engine.js';
 export default async function handler(req:any,res:any){
  res.setHeader('Cache-Control','no-store');
