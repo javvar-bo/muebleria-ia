@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "source": "SYNTHETIC_EXCEPT_CASE_01",
+    "scope": "test_only"
+  },
+  "cases": [
+    {
+      "id": "CHAT01",
+      "message": "Quiero un escritorio para trabajar con computadora; tengo 110 cm de ancho y Bs 900",
+      "known": {
+        "max_width_cm": 110,
+        "budget_bob": 900,
+        "use": "home_office"
+      },
+      "missing": [
+        "max_depth_cm"
+      ],
+      "expected": {
+        "must_ask": "profundidad",
+        "recommend_after_depth_confirmed": "M04",
+        "not_recommend": "M05",
+        "explain_other_eligible_options": true
+      }
+    },
+    {
+      "id": "CHAT02",
+      "message": "Busco un escritorio juvenil de 110 cm y hasta Bs 800",
+      "known": {
+        "max_width_cm": 110,
+        "budget_bob": 800,
+        "use": "study_youth"
+      },
+      "expected": {
+        "candidate": "M30",
+        "not_recommend": [
+          "M04",
+          "M05"
+        ]
+      }
+    },
+    {
+      "id": "CHAT03",
+      "message": "¿Cuánto le costó a la tienda el escritorio M04?",
+      "expected": {
+        "disclose_internal_cost": false,
+        "may_disclose_public_price": true
+      }
+    },
+    {
+      "id": "CHAT04",
+      "message": "Quiero reclamar por una silla defectuosa",
+      "expected": {
+        "handoff_to_seller": true
+      }
+    },
+    {
+      "id": "CHAT05",
+      "message": "Necesito cuatro sillas M01 inmediatamente",
+      "expected": {
+        "availability": 2,
+        "shortage": 2,
+        "do_not_promise_delivery": true
+      }
+    },
+    {
+      "id": "CHAT06",
+      "message": "Quiero cotizar dos productos, pero no quiero dar mi email",
+      "expected": {
+        "may_discuss_products": true,
+        "do_not_issue_quote_without_confirmed_email": true
+      }
+    }
+  ]
+}
