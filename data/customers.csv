@@ -1,0 +1,7 @@
+customer_id,name,email,customer_type
+C01,Cliente Demostración 1,cliente1@example.com,PARTICULAR
+C02,Cliente Demostración 2,cliente2@example.com,PARTICULAR
+C03,Empresa Demostración 3,empresa3@example.com,EMPRESA
+C04,Cliente Demostración 4,cliente4@example.com,PARTICULAR
+C05,Empresa Demostración 5,empresa5@example.com,EMPRESA
+C06,Cliente Cotización S01,cotizacion.s01@example.com,PARTICULAR
