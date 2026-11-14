@@ -26,7 +26,7 @@ export default async function handler(req:any,res:any){
  check('analytics.gross_margin',total.revenue_bob===15830&&total.cogs_bob===10660&&total.gross_profit_bob===5170&&total.gross_margin_percent===32.66);
  check('analytics.empty_period',stats(sales as any,'2025-01-01','2025-01-31').gross_margin_percent===null);
  const asOf='2026-11-13';
- const order=(id:string)=>{const v=inv(id);if(!v)throw Error('INVENTORY_MISSING');const inbound=pending.filter((x:any)=>x.product_id===id&&x.status==='CONFIRMED'&&x.count_as_inbound&&x.expected_arrival>=asOf&&x.expected_arrival<='2026-11-18').reduce((s:number,x:any)=>s+Number(x.quantity),0);return reorder(v,inbound,offers,asOf)};
+ const order=(id:string)=>{const v=inv(id);if(!v)throw Error('INVENTORY_MISSING');const inbound=pending.filter((x:any)=>x.product_id===id&&x.status==='CONFIRMED'&&x.count_as_inbound&&x.expected_arrival>=asOf&&x.expected_arrival<='2026-11-18').reduce((s:number,x:any)=>s+Number(x.quantity),0);return reorder(v as any,inbound,offers,asOf)};
  const m01=order('M01'),m03=order('M03'),m06=order('M06'),m08=order('M08');
  check('replenishment.M01',m01?.quantity===8&&m01?.supplier_id==='P02'&&m01?.total_bob===1780);
  check('replenishment.M03',m03?.quantity===6&&m03?.supplier_id==='P01'&&m03?.total_bob===2640);
