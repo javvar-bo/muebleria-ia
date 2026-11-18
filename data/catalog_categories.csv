@@ -1,0 +1,12 @@
+category_id,display_name,description,icon_name,sort_order,featured,active
+Sala,Muebles para sala,"Sofás, mesas de centro, racks y auxiliares para organizar y disfrutar los espacios de reunión.",sofa,1,true,true
+Comedor,Comedor,"Mesas, sillas, aparadores y muebles para compartir cada comida.",utensils,2,true,true
+Sillas,Sillas,Sillas de comedor y alternativas para distintos estilos de uso.,armchair,3,true,true
+Mesas,Mesas,Mesas funcionales para distintos ambientes y tamaños de hogar.,table,4,true,true
+Dormitorio,Dormitorio,"Camas, cómodas, roperos, veladores y soluciones para descansar y guardar.",bed-double,5,true,true
+Escritorios,Escritorios,"Opciones compactas, juveniles y ejecutivas para estudio y trabajo.",monitor,6,true,true
+Oficina,Oficina,"Sillas, mesas de reunión, escritorios y almacenamiento para espacios laborales.",briefcase-business,7,true,true
+Almacenaje,Organización y almacenaje,"Estanterías, repisas, organizadores y muebles para mantener el orden.",library-big,8,true,true
+Cocina,Cocina,"Alacenas, muebles auxiliares y soluciones prácticas para cocina.",cooking-pot,9,true,true
+Baño,Baño,Gabinetes y muebles auxiliares pensados para espacios de baño.,bath,10,true,true
+Multiuso,Muebles multiuso,"Mesas plegables, carritos y muebles versátiles para espacios flexibles.",blocks,11,true,true
