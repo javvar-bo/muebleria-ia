@@ -133,3 +133,12 @@ El responsable de base de datos puede crear su propio esquema y migraciones SQL 
 - Antes de activar chat: configurar `OPENAI_API_KEY` como **Sensitive** y producción en Vercel; redeploy. No equivale a la suscripción ChatGPT, requiere acceso a API.
 - **Seguridad:** comercial público, proformas/analítica solo con `x-admin-key` en llamadas servidor-servidor. No colocar esta clave en JavaScript del navegador.
 - El sistema aún no registra solicitudes ni emite PDF/correos. No presentar esas capacidades como completadas.
+
+## Actualización de Supabase — seguridad y tienda (noviembre 2026)
+
+- **Catálogo:** 100 muebles M01–M100, 192 existencias por almacén, 192 ofertas y 100 imágenes SVG **referenciales** (no fotos reales). 11 categorías, 9 secciones del sitio y 10 preguntas frecuentes.
+- **Roles y controles (base de datos):** `VENDEDOR`, `COMPRAS`, `GERENCIA`, `ADMINISTRADOR`, tablas para cuentas, roles, permisos, asignaciones, auditoría y aprobaciones. `VISITANTE` es acceso anónimo a catálogo seguro.
+- **Funciones RPC:** `catalog_public_products`, `my_access`, `supplier_directory`, `compare_supplier_offers`, `inventory_internal`, `sales_dashboard`, `quote_preview`, `submit_purchase_approval`, `approve_business_request`, `assign_staff_role`, `set_staff_account_status`.
+- **Seguridad:** acceso directo a datos internos denegado al anónimo; RPCs internas requieren sesión/permiso; trigger de creación de perfil; no autoasignar rol al registrarse. Buckets `product-catalog` público y `quote-documents` privado.
+- **Documentación para integrar con Google AI Studio:** [docs/GOOGLE_AI_STUDIO_SECURITY_INTEGRATION.md](docs/GOOGLE_AI_STUDIO_SECURITY_INTEGRATION.md).
+- **Pendiente:** registrar usuarios Auth reales; completar frontend, emisión PDF, envíos simulados, motor transaccional/programado de reposición y pruebas end-to-end. No considerar el proyecto finalizado todavía. Los pushes a GitHub tampoco actualizan automáticamente Vercel sin integración de despliegues.
